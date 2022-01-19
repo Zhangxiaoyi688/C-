@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+/*   构造函数的特点
+* 1.构造函数的名字必须与类的名字相同
+* 2.定义构造函数时不能指定返回类型
+* 3.构造函数的代码与其他函数一样，但一般不直接调用（显示调用）
+* 4.创建类的一个新对象时，会隐式地自动调用构造函数，也就是说，
+*        当程序中声明一个新对象时，程序会自动调用该对象所属类中定义的构造函数
+         来初始化这个对象的状态；
+  5.若在定义类时没有定义构造函数，C++会自动为该类创建一个缺省（default）的构造函数。
+        这个缺省构造函数没有任何形式参数，且函数体为空
+
+
+*/
+/*    析构函数
+* 在对象撤销的时执行一些清理任务
+* 例如在建立对象时用new开辟了一片内存空间，
+* delete会自动调用析构函数后释放内存
+
+
+
+*/
+class DemoClass
+{
+public:DemoClass(int i);
+      ~DemoClass();
+};
+
+DemoClass::DemoClass(int i)
+{
+    cout << "Initial value is " << i << endl;
+}
+DemoClass::~DemoClass()
+{
+    cout << "destructor" << endl;
+}
+int main()
+{
+    DemoClass obj(30);//声明一个对象创建对象
+    cout << "This is the end main()" << endl;
+
+	return 0;
+}
